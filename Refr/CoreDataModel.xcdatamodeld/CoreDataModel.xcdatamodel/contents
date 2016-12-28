@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Food" representedClassName="Food" syncable="YES" codeGenerationType="class">
+        <attribute name="expirationDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="notifications" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="FoodItemNotifications" inverseName="foodItem" inverseEntity="FoodItemNotifications" syncable="YES"/>
+    </entity>
+    <entity name="FoodItemNotifications" representedClassName="FoodItemNotifications" syncable="YES" codeGenerationType="class">
+        <relationship name="foodItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Food" inverseName="notifications" inverseEntity="Food" syncable="YES"/>
+    </entity>
+    <entity name="Medicine" representedClassName="Medicine" syncable="YES" codeGenerationType="class">
+        <attribute name="expirationDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="notifications" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="MedicineItemNotification" inverseName="medicineItem" inverseEntity="MedicineItemNotification" syncable="YES"/>
+    </entity>
+    <entity name="MedicineItemNotification" representedClassName="MedicineItemNotification" syncable="YES" codeGenerationType="class">
+        <relationship name="medicineItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="notifications" inverseEntity="Medicine" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Food" positionX="-74" positionY="-81" width="128" height="105"/>
+        <element name="FoodItemNotifications" positionX="117" positionY="-81" width="128" height="60"/>
+        <element name="Medicine" positionX="-74" positionY="72" width="128" height="103"/>
+        <element name="MedicineItemNotification" positionX="115" positionY="72" width="128" height="58"/>
+    </elements>
+</model>
